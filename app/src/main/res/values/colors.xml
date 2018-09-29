@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#ffffff</color>
+    <!--自定义颜色-->
+    <color name="app_color">#1e90ff</color>
+    <color name="app_content_text_color">#333333</color>
+    <color name="app_primary_title">#000000</color>
+    <color name="app_secondary_title">#222222</color>
+    <color name="app_three_title">#333333</color>
+    <color name="app_bg_color">#ffffff</color>
+    <color name="app_liner_color">#dcdcdc</color>
+    <color name="app_select_button_color">#ffffff</color>
+    <color name="app_un_select_button_color">#000000</color>
+    //透明
+    <color name="transparent">#00000000</color>
+
+
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:progress="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <xst.app.com.myutils.views.SwitchView
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        app:checked="true"
+        app:switchOnColor="#00E367"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:id="@+id/adapter_progress_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <xst.app.com.myutils.views.MyWaveView
+            xmlns:MyWaveView="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/home_wave_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            MyWaveView:amplitude="20"
+            MyWaveView:backgroundColor="#ffffff"
+            MyWaveView:firstWaveColor="#f7b542"
+            MyWaveView:secondWaveColor="#f9ce2f"
+            MyWaveView:speed="3"
+            android:layout_centerInParent="true"
+            MyWaveView:waveSize="71dp" />
+        <xst.app.com.myutils.views.ProgressView
+            android:id="@+id/home_progressView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:layout_centerInParent="true"
+            progress:bacColor="#ffb514"
+            progress:forColor="#ffb514"
+            progress:startAngle="5" />
+        <TextView
+            android:id="@+id/adapter_percent_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text=""
+            android:textColor="#ff0000" />
+    </RelativeLayout>
+    <xst.app.com.myutils.views.SwitcherView
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/notice_text"
+        app:switcherRollingTime="3000"
+        app:switcherTextColor="#747474"
+        app:switcherTextSize="12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </xst.app.com.myutils.views.SwitcherView>
+
+</LinearLayout>
