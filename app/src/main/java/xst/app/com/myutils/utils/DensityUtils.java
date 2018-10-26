@@ -43,4 +43,11 @@ public class DensityUtils {
         activity.getWindowManager().getDefaultDisplay().getMetrics(metric);
         return metric.heightPixels;
     }
+    public static int[] getScreenDisplay(Context context){
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        int width = displayMetrics.widthPixels - dip2px(context,220);
+        int height = displayMetrics.heightPixels;
+        int[] result = {width,height};
+        return result;
+    }
 }

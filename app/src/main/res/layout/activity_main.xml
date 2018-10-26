@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context="xst.app.com.myutils.MainActivity">
@@ -12,6 +13,32 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:orientation="horizontal"></LinearLayout>
+
+    <xst.app.com.myutils.test.Header
+
+        android:id="@+id/header"
+        app:titleBackgroundColor="@color/colorPrimary"
+        app:titleText="我是主页面"
+        app:titleTextSize="35dp"
+        app:titleLeftImg="@mipmap/back_black"
+        app:titleTextColor="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+    </xst.app.com.myutils.test.Header>
+
+    <xst.app.com.myutils.test.GestureView
+        android:id="@+id/gesture"
+        app:gesture_dot_size = "4"
+        app:gesture_normal_color = "@color/yellow"
+        app:gesture_wrong_color = "@color/purple"
+        app:gesture_point_selected = "@mipmap/ic_launcher"
+        app:gesture_point_wrong = "@mipmap/back_black"
+        app:gesture_point_normal = "@mipmap/ic_launcher_round"
+        app:gesture_margin = "25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </xst.app.com.myutils.test.GestureView>
 
     <xst.app.com.myutils.views.RoundImageView
         android:layout_width="wrap_content"
@@ -32,6 +59,12 @@
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:text="只有一个button" />
+    <Button
+        android:id="@+id/three"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:text="手势密码" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"

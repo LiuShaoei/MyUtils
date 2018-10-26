@@ -18,5 +18,11 @@
     //透明
     <color name="transparent">#00000000</color>
 
+    <color name="blue">#0000FF</color>
+    <color name="green">#339900</color>
+    <color name="yellow">#CCFF00</color>
+    <color name="red">#FF0000</color>
+    <color name="purple">#9900FF</color>
+
 
 </resources>

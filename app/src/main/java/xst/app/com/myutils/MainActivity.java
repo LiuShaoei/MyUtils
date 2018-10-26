@@ -8,6 +8,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import xst.app.com.myutils.gesture.GestureDrawLinear;
+import xst.app.com.myutils.test.GestureView;
+import xst.app.com.myutils.test.Header;
 import xst.app.com.myutils.utils.DialogUtil;
 import xst.app.com.myutils.utils.LoadingUtil;
 import xst.app.com.myutils.utils.LogUtil;
@@ -17,13 +20,16 @@ import xst.app.com.myutils.utils.StatusBarUtil;
 import xst.app.com.myutils.utils.ToastUtil;
 import xst.app.com.myutils.views.ClearEditText;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private TextView mOne;
     private TextView mTwo;
     private DialogUtil mDialogUtil;
     private LinearLayout mAppTop;
     private ClearEditText mEditText;
     private ImageView mImageView;
+    private Header mheader;
+    private TextView textView;
+    private GestureView gestureView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +40,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTwo = findViewById(R.id.two);
         mTwo.setOnClickListener(this);
         mAppTop = findViewById(R.id.app_top);
-        StatusBarUtil.init(this, mAppTop);
+        mheader = findViewById(R.id.header);
+        textView = findViewById(R.id.title_text);
+        gestureView = findViewById(R.id.gesture);
 
+        StatusBarUtil.init(this, mAppTop);
+        findViewById(R.id.three).setOnClickListener(this);
         mEditText = findViewById(R.id.edit_text);
         mImageView = findViewById(R.id.manner_img);
         mImageView.setOnClickListener(this);
+        mheader.setOnheaderClickListener(this);
         testNum();
+        textView.setText("我是title");
+
+        gestureView.startGesture(true,"12345", new GestureDrawLinear.GestureCallBack() {
+            @Override
+            public void onGestureCodeInput(String inputCode) {
+                ToastUtil.showShort(inputCode);
+                gestureView.clear(1000L);
+            }
+
+            @Override
+            public void checkedSuccess() {
+                ToastUtil.showShort("成功");
+                gestureView.clear(0L);
+            }
+
+            @Override
+            public void checkFail() {
+                ToastUtil.showShort("错误");
+                gestureView.clear(1000L);
+            }
+        });
     }
 
 
@@ -71,6 +103,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.three:
+                startActivity(new Intent(this,GestureEditActivity.class));
+                break;
+            case R.id.title_left_img:
+                ToastUtil.showShort("返回");
+                break;
             case R.id.one:
                 mDialogUtil = DialogUtil.getInstance(
                         new DialogUtil.Builder()
@@ -115,4 +153,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
 }
