@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="xst.app.com.myutils.MainActivity">
+    tools:context="lzw.app.com.myutils.MainActivity">
 
     <LinearLayout
         android:id="@+id/app_top"
@@ -14,7 +14,7 @@
         android:layout_height="1dp"
         android:orientation="horizontal"></LinearLayout>
 
-    <xst.app.com.myutils.test.Header
+    <lzw.app.com.myutils.test.Header
 
         android:id="@+id/header"
         app:titleBackgroundColor="@color/colorPrimary"
@@ -25,9 +25,10 @@
         android:layout_width="match_parent"
         android:layout_height="64dp">
 
-    </xst.app.com.myutils.test.Header>
+    </lzw.app.com.myutils.test.Header>
 
-    <xst.app.com.myutils.test.GestureView
+    <lzw.app.com.myutils.gesture.GestureView
+        android:background="@color/green"
         android:id="@+id/gesture"
         app:gesture_dot_size = "4"
         app:gesture_normal_color = "@color/yellow"
@@ -35,12 +36,12 @@
         app:gesture_point_selected = "@mipmap/ic_launcher"
         app:gesture_point_wrong = "@mipmap/back_black"
         app:gesture_point_normal = "@mipmap/ic_launcher_round"
-        app:gesture_margin = "25dp"
+        app:gesture_margin = "40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </xst.app.com.myutils.test.GestureView>
+    </lzw.app.com.myutils.gesture.GestureView>
 
-    <xst.app.com.myutils.views.RoundImageView
+    <lzw.app.com.myutils.views.RoundImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -73,7 +74,7 @@
         android:layout_marginTop="10dp"
         android:layout_height="50dp">
 
-        <xst.app.com.myutils.views.ClearEditText
+        <lzw.app.com.myutils.views.ClearEditText
             android:inputType="textPassword"
             android:id="@+id/edit_text"
             android:background="@null"
