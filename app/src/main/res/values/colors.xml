@@ -23,6 +23,8 @@
     <color name="yellow">#CCFF00</color>
     <color name="red">#FF0000</color>
     <color name="purple">#9900FF</color>
+    <color name="key_ok_color">#1280FA</color>
+    <color name="key_ok_color_pressed">#0174f2</color>
 
 
 </resources>

@@ -45,7 +45,7 @@ public class Header extends LinearLayout {
         imageView = a.getDrawable(R.styleable.Header_titleLeftImg);
         backGroundColor = a.getColor(R.styleable.Header_titleBackgroundColor, Color.WHITE);
         textColor = a.getColor(R.styleable.Header_titleTextColor, Color.WHITE);
-        textSize = a.getDimension(R.styleable.Header_titleTextSize, 30);
+        textSize = a.getDimension(R.styleable.Header_titleTextSize, 18);
 
         a.recycle();
     }
@@ -89,6 +89,6 @@ public class Header extends LinearLayout {
     }
 
     public void setTextSize(float textSize) {
-        mTextView.setPadding(0, (int) textSize, 0, 0);
+        mTextView.setTextSize(textSize);
     }
 }

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:progress="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:id="@+id/background_rel"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <lzw.app.com.myutils.views.SwitchView
+        android:id="@+id/switch_view"
         android:layout_marginTop="30dp"
         android:layout_gravity="center_horizontal"
         app:checked="true"
@@ -13,6 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <RelativeLayout
+        android:layout_below="@+id/switch_view"
         android:layout_marginTop="20dp"
         android:id="@+id/adapter_progress_rl"
         android:layout_width="match_parent"
@@ -50,6 +53,7 @@
             android:textColor="#ff0000" />
     </RelativeLayout>
     <lzw.app.com.myutils.views.SwitcherView
+        android:layout_below="@+id/adapter_progress_rl"
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
         android:id="@+id/notice_text"
@@ -60,4 +64,16 @@
         android:layout_height="wrap_content">
     </lzw.app.com.myutils.views.SwitcherView>
 
-</LinearLayout>
+    <EditText
+        android:layout_below="@+id/notice_text"
+        android:id="@+id/et_rondom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <include
+        layout="@layout/include_keyboardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

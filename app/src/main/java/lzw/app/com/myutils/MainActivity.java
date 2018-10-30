@@ -8,8 +8,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import lzw.app.com.myutils.gesture.GestureDrawLinear;
-import lzw.app.com.myutils.gesture.GestureView;
 import lzw.app.com.myutils.test.Header;
 import lzw.app.com.myutils.utils.DialogUtil;
 import lzw.app.com.myutils.utils.LoadingUtil;
@@ -29,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView mImageView;
     private Header mheader;
     private TextView textView;
-    private GestureView gestureView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAppTop = findViewById(R.id.app_top);
         mheader = findViewById(R.id.header);
         textView = findViewById(R.id.title_text);
-        gestureView = findViewById(R.id.gesture);
 
         StatusBarUtil.init(this, mAppTop);
         findViewById(R.id.three).setOnClickListener(this);
@@ -52,26 +48,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mheader.setOnheaderClickListener(this);
         testNum();
         textView.setText("我是title");
-
-        gestureView.startGesture(true,"12345", new GestureDrawLinear.GestureCallBack() {
-            @Override
-            public void onGestureCodeInput(String inputCode) {
-                ToastUtil.showShort(inputCode);
-                gestureView.clear(1000L);
-            }
-
-            @Override
-            public void checkedSuccess() {
-                ToastUtil.showShort("成功");
-                gestureView.clear(0L);
-            }
-
-            @Override
-            public void checkFail() {
-                ToastUtil.showShort("错误");
-                gestureView.clear(1000L);
-            }
-        });
     }
 
 
@@ -104,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.three:
-                startActivity(new Intent(this,GestureEditActivity.class));
+                startActivity(new Intent(this,GestureActivity.class));
                 break;
             case R.id.title_left_img:
                 ToastUtil.showShort("返回");

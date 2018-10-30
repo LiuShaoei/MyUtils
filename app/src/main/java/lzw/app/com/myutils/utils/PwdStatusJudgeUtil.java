@@ -8,11 +8,11 @@ import android.widget.ImageView;
 
 import lzw.app.com.myutils.R;
 
-
+/**
+ * 控制密码的显示或者隐藏
+ */
 public class PwdStatusJudgeUtil {
     /**
-     * 控制密码的显示或者隐藏
-     *
      * @param text      文本输入框
      * @param imageView 显示或者隐藏的按钮
      */

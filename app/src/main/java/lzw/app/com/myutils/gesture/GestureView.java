@@ -32,7 +32,7 @@ public class GestureView extends LinearLayout {
     public GestureView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         //加载布局视图
-        LayoutInflater.from(context).inflate(R.layout.activity_gesture, this, true);
+        LayoutInflater.from(context).inflate(R.layout.activity_gesture_container, this, true);
         //加载自定义属性
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.Gesture);
         //手势点的大小,不会影响到手势区域的大小,暂时不支持小数

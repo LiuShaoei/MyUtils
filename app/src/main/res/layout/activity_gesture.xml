@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <FrameLayout
-        android:id="@+id/gesture_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="80dp" >
-    </FrameLayout>
-</RelativeLayout>
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <lzw.app.com.myutils.gesture.GestureView
+        android:background="@color/green"
+        android:id="@+id/gesture"
+        app:gesture_dot_size = "4"
+        app:gesture_normal_color = "@color/yellow"
+        app:gesture_wrong_color = "@color/purple"
+        app:gesture_point_selected = "@mipmap/ic_launcher"
+        app:gesture_point_wrong = "@mipmap/back_black"
+        app:gesture_point_normal = "@mipmap/ic_launcher_round"
+        app:gesture_margin = "40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </lzw.app.com.myutils.gesture.GestureView>
+</LinearLayout>

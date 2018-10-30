@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name="lzw.app.com.myutils.WaveViewActivity" />
-        <activity android:name="lzw.app.com.myutils.GestureEditActivity" />
+        <activity android:name="lzw.app.com.myutils.GestureActivity" />
     </application>
 
 </manifest>

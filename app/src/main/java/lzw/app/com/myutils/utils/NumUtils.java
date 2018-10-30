@@ -211,6 +211,17 @@ public class NumUtils {
         Date date = new Date(time);
         return sdf.format(date);
     }
+    /**
+     * 自定义时间格式转换
+     *
+     * @param dateFormat
+     * @param mTime      NumUtils.transferStringToDate("yyyy-MM-dd",5115112251555);
+     */
+    public static String transferStringToDate(String dateFormat, long mTime) {
+        SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+        Date date = new Date(mTime);
+        return sdf.format(date);
+    }
 
     /**
      * 获取版本号name
