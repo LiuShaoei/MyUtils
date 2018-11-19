@@ -5,7 +5,7 @@ android {
     defaultConfig {
         applicationId "xst.app.com.myutils"
         minSdkVersion 19
-        targetSdkVersion 23
+        targetSdkVersion 26
         versionCode 23
         versionName "3.1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -16,7 +16,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '27.0.3'
 }
 
 dependencies {

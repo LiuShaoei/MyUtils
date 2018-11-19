@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAppTop = findViewById(R.id.app_top);
         mheader = findViewById(R.id.header);
         textView = findViewById(R.id.title_text);
+        findViewById(R.id.popup).setOnClickListener(this);
 
         StatusBarUtil.init(this, mAppTop);
         findViewById(R.id.three).setOnClickListener(this);
@@ -126,6 +127,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.manner_img:
                 PwdStatusJudgeUtil.setPwdShowOrHidden(mEditText,mImageView);
+                break;
+            case R.id.popup:
+                PopupWindowActivity.toPopupWindowActivity(this);
                 break;
         }
     }

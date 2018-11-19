@@ -22,6 +22,7 @@
         </activity>
         <activity android:name="lzw.app.com.myutils.WaveViewActivity" />
         <activity android:name="lzw.app.com.myutils.GestureActivity" />
+        <activity android:name=".PopupWindowActivity"/>
     </application>
 
 </manifest>
