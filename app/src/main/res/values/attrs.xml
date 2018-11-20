@@ -24,20 +24,24 @@
         </attr>
     </declare-styleable>
     <declare-styleable name="Header">
-        <attr name="titleTextSize" format="dimension"/>
-        <attr name="titleTextColor" format="color"/>
-        <attr name="titleText" format="string"/>
-        <attr name="titleLeftImg" format="reference"/>
-        <attr name="titleBackgroundColor" format="color"/>
+        <attr name="title_center_text_size" format="dimension" />
+        <attr name="title_center_text_color" format="color" />
+        <attr name="title_center_text" format="string" />
+        <attr name="title_left_img" format="reference" />
+        <attr name="title_background_color" format="color" />
+        <attr name="title_right_img" format="reference" />
+        <attr name="title_right_text" format="string" />
+        <attr name="title_right_text_color" format="color" />
+        <attr name="title_right_text_size" format="dimension" />
     </declare-styleable>
-    
+
     <declare-styleable name="Gesture">
-        <attr name="gesture_dot_size" format="integer"/>
-        <attr name="gesture_margin" format="dimension"/>
-        <attr name="gesture_normal_color" format="color"/>
-        <attr name="gesture_wrong_color" format="color"/>
-        <attr name="gesture_point_selected" format="reference"/>
-        <attr name="gesture_point_wrong" format="reference"/>
-        <attr name="gesture_point_normal" format="reference"/>
+        <attr name="gesture_dot_size" format="integer" />
+        <attr name="gesture_margin" format="dimension" />
+        <attr name="gesture_normal_color" format="color" />
+        <attr name="gesture_wrong_color" format="color" />
+        <attr name="gesture_point_selected" format="reference" />
+        <attr name="gesture_point_wrong" format="reference" />
+        <attr name="gesture_point_normal" format="reference" />
     </declare-styleable>
 </resources>

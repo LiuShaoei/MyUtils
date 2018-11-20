@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import lzw.app.com.myutils.test.Header;
+import lzw.app.com.myutils.header.Header;
 import lzw.app.com.myutils.utils.DialogUtil;
 import lzw.app.com.myutils.utils.LoadingUtil;
 import lzw.app.com.myutils.utils.LogUtil;
@@ -18,7 +18,7 @@ import lzw.app.com.myutils.utils.StatusBarUtil;
 import lzw.app.com.myutils.utils.ToastUtil;
 import lzw.app.com.myutils.views.ClearEditText;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView mOne;
     private TextView mTwo;
     private DialogUtil mDialogUtil;
@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ClearEditText mEditText;
     private ImageView mImageView;
     private Header mheader;
-    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,19 +37,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTwo.setOnClickListener(this);
         mAppTop = findViewById(R.id.app_top);
         mheader = findViewById(R.id.header);
-        textView = findViewById(R.id.title_text);
         findViewById(R.id.popup).setOnClickListener(this);
-
         StatusBarUtil.init(this, mAppTop);
         findViewById(R.id.three).setOnClickListener(this);
         mEditText = findViewById(R.id.edit_text);
         mImageView = findViewById(R.id.manner_img);
         mImageView.setOnClickListener(this);
-        mheader.setOnheaderClickListener(this);
+        mheader.setOnHeaderClickListener(this);
         testNum();
-        textView.setText("我是title");
-    }
 
+    }
 
 
     /**
@@ -59,20 +55,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void testNum() {
         double a = 35.235435;
         double b = 3.3;
-        double  result = NumUtils.formatRound(a,b,2);
-        LogUtil.i(result+"");
+        double result = NumUtils.formatRound(a, b, 2);
+        LogUtil.i(result + "");
 
-        LogUtil.i("formatComma:"+(NumUtils.formatComma("345345345.3453425")));
-        LogUtil.i("format1Point:"+(NumUtils.format1Point("345345345.3453425")));
-        LogUtil.i("format2Point:"+(NumUtils.format2Point("345345345.3453425")));
-        LogUtil.i("formatDou00:"+(NumUtils.formatDou00("345345345.3453425")));
-        LogUtil.i("formatDou000:"+(NumUtils.formatDou000("345345345.3453425")));
-        LogUtil.i("formatDou0000:"+(NumUtils.formatDou0000("345345345")));
-        LogUtil.i("formatDou00002:"+(NumUtils.formatDou00002("345300")));
-        LogUtil.i("formatNoPoint:"+(NumUtils.formatNoPoint("345345300.6453425")));
+        LogUtil.i("formatComma:" + (NumUtils.formatComma("345345345.3453425")));
+        LogUtil.i("format1Point:" + (NumUtils.format1Point("345345345.3453425")));
+        LogUtil.i("format2Point:" + (NumUtils.format2Point("345345345.3453425")));
+        LogUtil.i("formatDou00:" + (NumUtils.formatDou00("345345345.3453425")));
+        LogUtil.i("formatDou000:" + (NumUtils.formatDou000("345345345.3453425")));
+        LogUtil.i("formatDou0000:" + (NumUtils.formatDou0000("345345345")));
+        LogUtil.i("formatDou00002:" + (NumUtils.formatDou00002("345300")));
+        LogUtil.i("formatNoPoint:" + (NumUtils.formatNoPoint("345345300.6453425")));
         LogUtil.i(NumUtils.getAppName());
-        LogUtil.i(NumUtils.getAppCode()+"");
-        String time = NumUtils.transferStringToDate("yyyy-MM-dd","5115112251555");
+        LogUtil.i(NumUtils.getAppCode() + "");
+        String time = NumUtils.transferStringToDate("yyyy-MM-dd", "5115112251555");
         LogUtil.i(time);
 
     }
@@ -81,10 +77,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.three:
-                startActivity(new Intent(this,GestureActivity.class));
+                startActivity(new Intent(this, GestureActivity.class));
                 break;
             case R.id.title_left_img:
                 ToastUtil.showShort("返回");
+                break;
+            case R.id.title_right_text:
+                ToastUtil.showShort("下一页");
                 break;
             case R.id.one:
                 mDialogUtil = DialogUtil.getInstance(
@@ -98,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     public void clickOneButton() {
                                         ToastUtil.showShort("OneButton");
                                         //在这里点击销毁实例,或其他地方
-                                        Intent intent = new Intent(MainActivity.this,WaveViewActivity.class);
+                                        Intent intent = new Intent(MainActivity.this, WaveViewActivity.class);
                                         startActivity(intent);
                                         mDialogUtil.dismissAllowingStateLoss();
                                     }
@@ -126,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         })).showDialog(getSupportFragmentManager());
                 break;
             case R.id.manner_img:
-                PwdStatusJudgeUtil.setPwdShowOrHidden(mEditText,mImageView);
+                PwdStatusJudgeUtil.setPwdShowOrHidden(mEditText, mImageView);
                 break;
             case R.id.popup:
                 PopupWindowActivity.toPopupWindowActivity(this);

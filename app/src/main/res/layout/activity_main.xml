@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="lzw.app.com.myutils.MainActivity">
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/app_top"
@@ -15,18 +15,20 @@
         android:orientation="horizontal">
     </LinearLayout>
 
-    <lzw.app.com.myutils.test.Header
-
+    <lzw.app.com.myutils.header.Header
         android:id="@+id/header"
-        app:titleBackgroundColor="@color/colorPrimary"
-        app:titleText="我是主页面"
-        app:titleTextSize="18sp"
-        app:titleLeftImg="@mipmap/back_black"
-        app:titleTextColor="@color/colorAccent"
+        app:title_right_text="下一页"
+        app:title_background_color="@color/colorPrimary"
+        app:title_center_text="我是主页面"
+        app:title_center_text_color="@color/colorAccent"
+        app:title_left_img="@mipmap/back_black"
+        app:title_center_text_size="14sp"
+        app:title_right_text_size="10sp"
         android:layout_width="match_parent"
-        android:layout_height="64dp">
+        android:layout_height="44dp"
+        tools:context=".MainActivity">
 
-    </lzw.app.com.myutils.test.Header>
+    </lzw.app.com.myutils.header.Header>
 
 
 
