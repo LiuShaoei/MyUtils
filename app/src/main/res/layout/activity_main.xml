@@ -19,7 +19,7 @@
         android:id="@+id/header"
         app:title_right_text="下一页"
         app:title_background_color="@color/colorPrimary"
-        app:title_center_text="我是主页面"
+        app:title_center_text="我是刘召伟"
         app:title_center_text_color="@color/colorAccent"
         app:title_left_img="@mipmap/back_black"
         app:title_center_text_size="14sp"
