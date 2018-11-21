@@ -37,6 +37,36 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:src="@mipmap/ic_launcher" />
+    <lzw.app.com.myutils.group.MyRadioGroup
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:gravity="center"
+            android:text="p20"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:gravity="center"
+            android:text="p21"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:gravity="center"
+            android:text="p22"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:gravity="center"
+            android:text="p23"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:gravity="center"
+            android:text="p24"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+    </lzw.app.com.myutils.group.MyRadioGroup>
 
     <Button
         android:id="@+id/one"
