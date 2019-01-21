@@ -17,6 +17,10 @@
     <color name="app_un_select_button_color">#000000</color>
     //透明
     <color name="transparent">#00000000</color>
+    <color name="tv_black_low">#222</color>
+    <color name="tv_black">#111</color>
+    <color name="line_color">#ccc</color>
+    <color name="tv_grayer">#ccc</color>
 
     <color name="blue">#0000FF</color>
     <color name="green">#339900</color>

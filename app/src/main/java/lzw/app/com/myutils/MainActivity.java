@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import lzw.app.com.myutils.calendar.CalendarActivity;
 import lzw.app.com.myutils.header.Header;
 import lzw.app.com.myutils.utils.CodeUtil;
 import lzw.app.com.myutils.utils.DialogUtil;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void onServiceDisconnected(ComponentName name) {
             //断开连接
-         //  mUserAidl = UserAidl.Stub
+            //  mUserAidl = UserAidl.Stub
         }
     };
 
@@ -70,8 +71,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mImageView.setOnClickListener(this);
         mheader.setOnHeaderClickListener(this);
         mCode = findViewById(R.id.code);
+        findViewById(R.id.calendar).setOnClickListener(this);
         mCode.setOnClickListener(this);
-        mGetCode  = findViewById(R.id.m_code);
+        mGetCode = findViewById(R.id.m_code);
         testNum();
 
         Bitmap code = CodeUtil.getInstance().createBitmap();
@@ -87,12 +89,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void testNum() {
 
 
-
-
         Intent mIntent = new Intent();
         mIntent.setAction("com.study.aidl.user");//你定义的service的action
         mIntent.setPackage("xst.app.com.essayjoke");//这里你需要设置你应用的包名
-        bindService(mIntent,mServiceConn,Context.BIND_AUTO_CREATE);
+        bindService(mIntent, mServiceConn, Context.BIND_AUTO_CREATE);
 
 
         double a = 35.235435;
@@ -118,6 +118,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.calendar:
+                startActivity(new Intent(this, CalendarActivity.class));
+                break;
             case R.id.three:
                 startActivity(new Intent(this, GestureActivity.class));
                 break;
@@ -125,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ToastUtil.showShort("返回");
                 break;
             case R.id.title_right_text:
-               // ToastUtil.showShort("下一页");
+                // ToastUtil.showShort("下一页");
 
                 try {
                     ToastUtil.showShort(mUserAidl.getUserName());
