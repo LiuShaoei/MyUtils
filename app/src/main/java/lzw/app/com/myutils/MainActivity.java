@@ -1,7 +1,13 @@
 package lzw.app.com.myutils;
 
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
@@ -9,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import lzw.app.com.myutils.header.Header;
+import lzw.app.com.myutils.utils.CodeUtil;
 import lzw.app.com.myutils.utils.DialogUtil;
 import lzw.app.com.myutils.utils.LoadingUtil;
 import lzw.app.com.myutils.utils.LogUtil;
@@ -17,6 +24,7 @@ import lzw.app.com.myutils.utils.PwdStatusJudgeUtil;
 import lzw.app.com.myutils.utils.StatusBarUtil;
 import lzw.app.com.myutils.utils.ToastUtil;
 import lzw.app.com.myutils.views.ClearEditText;
+import xst.app.com.essayjoke.UserAidl;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView mOne;
@@ -26,6 +34,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ClearEditText mEditText;
     private ImageView mImageView;
     private Header mheader;
+    private ImageView mCode;
+    private TextView mGetCode;
+
+    private UserAidl mUserAidl;
+    private ServiceConnection mServiceConn = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            //连接好了
+            mUserAidl = UserAidl.Stub.asInterface(service);
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            //断开连接
+         //  mUserAidl = UserAidl.Stub
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +69,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mImageView = findViewById(R.id.manner_img);
         mImageView.setOnClickListener(this);
         mheader.setOnHeaderClickListener(this);
+        mCode = findViewById(R.id.code);
+        mCode.setOnClickListener(this);
+        mGetCode  = findViewById(R.id.m_code);
         testNum();
+
+        Bitmap code = CodeUtil.getInstance().createBitmap();
+        mCode.setImageBitmap(code);
+        mGetCode.setText(CodeUtil.getInstance().getCode());
 
     }
 
@@ -53,6 +85,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * 测试数字转换工具类
      */
     private void testNum() {
+
+
+
+
+        Intent mIntent = new Intent();
+        mIntent.setAction("com.study.aidl.user");//你定义的service的action
+        mIntent.setPackage("xst.app.com.essayjoke");//这里你需要设置你应用的包名
+        bindService(mIntent,mServiceConn,Context.BIND_AUTO_CREATE);
+
+
         double a = 35.235435;
         double b = 3.3;
         double result = NumUtils.formatRound(a, b, 2);
@@ -83,7 +125,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ToastUtil.showShort("返回");
                 break;
             case R.id.title_right_text:
-                ToastUtil.showShort("下一页");
+               // ToastUtil.showShort("下一页");
+
+                try {
+                    ToastUtil.showShort(mUserAidl.getUserName());
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+
                 break;
             case R.id.one:
                 mDialogUtil = DialogUtil.getInstance(
@@ -129,6 +178,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.popup:
                 PopupWindowActivity.toPopupWindowActivity(this);
+                break;
+            case R.id.code:
+                Bitmap code = CodeUtil.getInstance().createBitmap();
+                mCode.setImageBitmap(code);
+                mGetCode.setText(CodeUtil.getInstance().getCode());
                 break;
         }
     }

@@ -81,12 +81,7 @@ public class Header extends LinearLayout {
             mLeftImageView.setVisibility(GONE);
         } else {
             setLeftImage(imageView);
-            mLeftImageView.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    activity.finish();
-                }
-            });
+            mLeftImageView.setOnClickListener((view) -> activity.finish());
         }
         if (textRightView != null) {
             mRightTextView.setVisibility(VISIBLE);

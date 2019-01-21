@@ -35,7 +35,7 @@
     <lzw.app.com.myutils.views.RoundImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:src="@mipmap/ic_launcher" />
     <lzw.app.com.myutils.group.MyRadioGroup
         android:orientation="horizontal"
@@ -44,27 +44,28 @@
         <RadioButton
             android:gravity="center"
             android:text="p20"
-            android:layout_width="100dp"
+            android:layout_width="90dp"
             android:layout_height="wrap_content" />
         <RadioButton
             android:gravity="center"
             android:text="p21"
-            android:layout_width="100dp"
+            android:layout_width="90dp"
             android:layout_height="wrap_content" />
+
         <RadioButton
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="p22"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content" />
+            android:text="p22" />
         <RadioButton
             android:gravity="center"
             android:text="p23"
-            android:layout_width="100dp"
+            android:layout_width="90dp"
             android:layout_height="wrap_content" />
         <RadioButton
             android:gravity="center"
             android:text="p24"
-            android:layout_width="100dp"
+            android:layout_width="90dp"
             android:layout_height="wrap_content" />
     </lzw.app.com.myutils.group.MyRadioGroup>
 
@@ -72,27 +73,48 @@
         android:id="@+id/one"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:text="只有一个button" />
 
     <Button
         android:id="@+id/two"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:text="只有一个button" />
     <Button
         android:id="@+id/popup"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:text="popup" />
     <Button
         android:id="@+id/three"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:text="手势密码" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/m_code"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp" />
+        <ImageView
+            android:id="@+id/code"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+
+            android:layout_marginRight="12dp" />
+    </LinearLayout>
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -108,6 +130,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="50dp" />
+
 
         <ImageView
             android:id="@+id/manner_img"
